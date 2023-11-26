@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsl(235, 18%, 26%);
+  min-height: 100vh;
+  line-height: 1;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  display: grid;
+  place-content: center;
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: hsl(0, 0%, 100%);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr 1fr;
+}
+.wrapper.success {
+  display: initial;
+  padding: 3.5rem;
+}
+
+.left {
+  color: hsl(234, 29%, 20%);
+  padding: 4rem 0rem 0rem 2rem;
+}
+.left .left-list h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.left .left-list .paragraph1 {
+  padding-bottom: 2rem;
+  line-height: 1.6;
+}
+.left .left-list ul {
+  margin-bottom: 1.5rem;
+}
+.left .left-list ul li {
+  display: flex;
+  align-items: flex-start;
+  list-style-type: none;
+  list-style-position: inside;
+  padding-bottom: 1rem;
+}
+.left .left-list ul li::before {
+  content: "";
+  margin-right: 0.5rem;
+}
+.left .left-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.left .left-form label {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.left .left-form label .invalid-email {
+  color: hsl(4, 100%, 67%);
+  display: none;
+}
+.left .left-form label .invalid-email.active {
+  display: block;
+}
+.left .left-form input, .left .left-form button {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+.left .left-form input {
+  border: 1px solid hsl(231, 7%, 60%);
+}
+.left .left-form input.active {
+  background-color: rgba(255, 98, 87, 0.2);
+  border: 1px solid hsl(4, 100%, 67%);
+}
+.left .left-form button {
+  cursor: pointer;
+  background-color: hsl(234, 29%, 20%);
+  color: white;
+  font-weight: 700;
+  outline: none;
+  border: none;
+}
+.left .left-form button:hover {
+  background: rgb(255, 62, 131);
+  background: linear-gradient(124deg, rgb(255, 62, 131) 0%, rgb(253, 99, 74) 150%);
+  box-shadow: 0 1rem 1.5rem rgba(255, 62, 131, 0.3333333333);
+}
+
+.success-form {
+  display: none;
+  line-height: 1.2;
+  max-width: 18em;
+  max-height: 20em;
+}
+.success-form.active {
+  display: block;
+}
+.success-form img {
+  width: 50px;
+}
+.success-form h2 {
+  font-size: 3rem;
+  margin-top: 1.5rem;
+}
+.success-form p {
+  margin: 1.5rem 0;
+  font-size: 0.7rem;
+}
+.success-form button {
+  cursor: pointer;
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+.success-form button:hover {
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(255, 62, 131) 0%, rgb(253, 99, 74) 100%);
+}
+
+#user-email {
+  font-weight: 700;
+}
+
+.listimage {
+  align-items: center;
+  margin-left: -0.5rem;
+}
+
+.imagelist {
+  padding-right: 1rem;
+  padding-left: 0;
+}
+
+@media (max-width: 700px) {
+  body {
+    display: initial;
+    line-height: 1.4;
+    background-color: hsl(0, 0%, 100%);
+  }
+  .wrapper {
+    width: 100%;
+    min-width: 375px;
+    height: initial;
+    padding: 0;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .wrapper.success {
+    display: block;
+    padding: initial;
+  }
+  .right {
+    grid-row: 1;
+  }
+  .left {
+    padding: 0 2rem;
+    grid-row: 2;
+  }
+  .left .left-list h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .left .left-list .paragraph1 {
+    padding-bottom: 1rem;
+  }
+  .left-list .header1 {
+    font-size: 40px;
+  }
+  .right img {
+    width: 100%;
+  }
+  .success-form.active {
+    height: 100vh;
+    padding: 14rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  success-form button {
+    margin-top: auto;
+  }
+}/*# sourceMappingURL=main.css.map */

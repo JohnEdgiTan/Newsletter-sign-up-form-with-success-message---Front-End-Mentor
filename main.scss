@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import './variables';
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: $charcoalgrey;
+    min-height: 100vh;
+    line-height: 1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    display:grid;
+    place-content: center;
+}
+.wrapper{
+    max-width:900px;
+    margin: 0 auto;
+    background-color: $white;
+    padding:1.5rem;
+    border-radius:1.5rem;
+    display:grid;
+    gap:4rem;
+    grid-template-columns: 1fr 1fr;
+    &.success{
+        display:initial;
+        padding:3.5rem;
+    }
+}
+.left{
+    color:$darkslategrey;
+    padding: 4rem 0rem 0rem 2rem;
+    & .left-list{
+        & h1{
+            font-size:3rem;
+            margin-bottom:2rem;
+        }
+        & .paragraph1{
+            padding-bottom:2rem;
+            line-height:1.6;
+        }
+        & ul{
+            margin-bottom:1.5rem;
+        }
+        & ul li{
+            display:flex;
+            align-items: flex-start;
+            list-style-type: none;
+            list-style-position:inside;
+            padding-bottom:1rem;
+        }
+        & ul li::before{
+            content:'';
+            margin-right:.5rem;
+        }
+    }
+    & .left-form{
+        display:flex;
+        flex-direction:column;
+        margin-top:3rem;
+        & label{
+            font-size:12px;
+            font-weight:700;
+            margin-bottom:.5rem;
+            display:flex;
+            justify-content: space-between;
+            & .invalid-email{
+                color:$tomato;
+                display:none;
+                &.active{  
+                    display: block;
+                }
+            }
+        }
+        & input, & button{
+            padding:1rem;
+            margin-bottom:1.5rem;
+            border-radius:8px;
+        }
+        & input{
+            border:1px solid $grey;
+            &.active{
+                background-color: rgba(255,98,87,0.2);
+                border:1px solid $tomato;
+            }
+        }
+        & button{
+            cursor: pointer;
+            background-color: $darkslategrey;
+            color:white;
+            font-weight:700;
+            outline:none;
+            border:none;
+            &:hover{
+                background: rgb(255,62,131);
+                background: linear-gradient(124deg, rgba(255,62,131,1) 0%, rgba(253,99,74,1) 150%);
+                box-shadow: 0 1rem 1.5rem $gradient-shadow;
+            }
+        }
+
+    }   
+} 
+.success-form{
+    display:none;
+    line-height:1.2;
+    max-width: 18em;
+    max-height: 20em;
+    &.active{
+        display:block;
+    }
+    & img{
+        width:50px;
+    }
+    & h2{
+        font-size:3rem;
+        margin-top:1.5rem;
+    }
+    &  p{
+        margin:1.5rem 0;
+        font-size:0.7rem;
+    }
+    & button{
+        cursor:pointer;
+        background-color: $darkslategrey;
+        color:$white;
+        width:100%;
+        padding:1rem;
+        border-radius:8px;
+        border:none;
+        outline:none;
+        &:hover{
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,62,131,1) 0%, rgba(253,99,74,1) 100%);
+        }
+    }
+}
+#user-email{
+    font-weight:700;
+}
+.listimage{
+    align-items:center;
+    margin-left:-0.5rem;
+}
+.imagelist{
+    padding-right:1rem;
+    padding-left:0;
+}
+
+@media (max-width:700px){
+    body{
+        display:initial;
+        line-height:1.4;
+        background-color: $white;
+    }
+    .wrapper{
+        width:100%;
+        min-width:375px;
+        height:initial;
+        padding:0;
+        grid-template-columns:1fr;
+        gap:1rem;
+        &.success{
+            display:block;
+            padding:initial;
+        }
+    }
+    .right{
+        grid-row:1;
+    }
+    .left{
+        padding:0 2rem;
+        grid-row:2;
+        & .left-list {
+            & h1{
+                font-size:2rem;
+                margin-bottom:1rem;
+            }
+            & .paragraph1{
+                padding-bottom:1rem;
+            }
+        }
+    }
+    .left-list .header1{
+        font-size:40px;
+    }
+    .right img{
+        width:100%;
+    }
+    .success-form.active{
+        height:100vh;
+        padding:14rem 2rem 2rem 2rem;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+    success-form button{
+        margin-top:auto;
+    }
+
+}
